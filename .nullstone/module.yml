@@ -1,0 +1,15 @@
+org_name: nullstone
+name: aws-api-gateway-http-api
+friendly_name: API Gateway HTTP API
+description: Creates an HTTP API to serve the application through an AWS API Gateway
+category: capability
+subcategory: ingress
+provider_types:
+    - aws
+platform: api-gateway
+subplatform: v2
+type: ""
+appCategories:
+    - serverless
+is_public: true
+tool_name: "terraform"
