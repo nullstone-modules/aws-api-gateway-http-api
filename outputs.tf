@@ -1,5 +1,5 @@
 output "public_urls" {
-  value = [local.public_urls]
+  value = local.public_urls
 }
 
 output "permissions" {
