@@ -26,9 +26,11 @@ locals {
 resource "aws_apigatewayv2_route" "this" {
   for_each = local.normalized_paths
 
-  api_id    = aws_apigatewayv2_api.this.id
-  route_key = "ANY ${each.value}"
-  target    = "integrations/${aws_apigatewayv2_integration.lambda.id}"
+  api_id             = aws_apigatewayv2_api.this.id
+  route_key          = "ANY ${each.value}"
+  target             = "integrations/${aws_apigatewayv2_integration.lambda.id}"
+  authorization_type = local.route_authorization_type
+  authorizer_id      = local.route_authorizer_id
 }
 
 resource "aws_apigatewayv2_stage" "default" {
